@@ -98,6 +98,7 @@
 
             </div>  
             
+            
         </div>
 
         
@@ -106,6 +107,10 @@
       
    
     </header>
+
+    <div class="caixa1">
+        <h2 class="menutext1"><a href="index.html">Menu Principal</a></h2>
+        </div>
     <div style="overflow:auto">
         <!-- Coluna da Esqueda-->
         <div class="menu">
@@ -114,62 +119,72 @@
 
         <div class="main">
 
-            
+        
             <!-- Página central Main -->
-            <h2>Promoções do Dia</h2>
-            <div class="card-group">
-                <div class="card">
-                  <img class="card-img-top" src="img/roupa1.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Camisa Feminina Morcego</h5>
-                    <p class="card-text">R$50,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="img/roupa3.webp" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Camisa Feminina Ursinho</h5>
-                    <p class="card-text">R$40,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="IMG/roupa4.jfif" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Camisa Feminina BabyMetal</h5>
-                    <p class="card-text">R$45,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-              </div>
+            <h2>Listagem de Usuário</h2>
 
-              <div class="card-group">
-                <div class="card">
-                  <img class="card-img-top" src="img/sobretudo.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Sobretudo Masculino</h5>
-                    <p class="card-text">R$120,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="img/terno2.jfif" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Terno Formal Masculino</h5>
-                    <p class="card-text">R$500,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="img/jaqueta1.webp" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Jaqueta de Couro Masculina</h5>
-                    <p class="card-text">R$250,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-              </div>
+            <?php
+
+
+switch($_REQUEST["acao"]){
+    case "editar":
+       print "UserEdit1.php";
+}
+
+include_once('config.php');
+    
+$sql = "SELECT * FROM user";
+
+$res = $conexao->query($sql);
+
+$qtd = $res->num_rows;
+
+if($qtd > 0){
+
+    
+
+
+    print "<table class='table table-hover table-strupped table-bordered'>";
+    print "<tr>";
+    print "<th>#</th>";
+    print "<th>Nome</th>";
+    print "<th>E-Mail</th>";
+    print "<th>Data de nascimento</th>";
+    print "<th>Acões</th>";
+    print "</tr>";
+    while($row = $res->fetch_object()){
+        print "<tr>";
+        print "<td>" . $row->id . "</td>";
+        print "<td>" . $row->username . "</td>";
+        print "<td>" . $row->email . "</td>";
+        print "<td>" . $row->birthday . "</td>";
+        print "<td>
+
+        
+
+
+ 
+
+                    <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id=".$row->id."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
+                </td>";
+        print "</tr>";
+    }
+    print "</table>";
+}else{
+    print "<p class='alert alert-danger'>Não encontrou resultados!</p>";
+}
+
+
+
+
+?>
+
+<a href="UserEdit1.php">
+<button type="button" class="btn btn-success">Editar</button>
+  </a> 
+
+
+        
             
         </div>
 
@@ -178,6 +193,12 @@
             <img src="img/bannerlat1.png" class="bannerlat">
         </div>
     </div>
+
+
+
+
+
+    
 
     <footer>
         <!-- Rodapé-->

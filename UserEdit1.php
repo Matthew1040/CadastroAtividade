@@ -98,6 +98,7 @@
 
             </div>  
             
+            
         </div>
 
         
@@ -106,6 +107,10 @@
       
    
     </header>
+
+    <div class="caixa1">
+        <h2 class="menutext1"><a href="index.html">Menu Principal</a></h2>
+        </div>
     <div style="overflow:auto">
         <!-- Coluna da Esqueda-->
         <div class="menu">
@@ -114,62 +119,49 @@
 
         <div class="main">
 
-            
+        
             <!-- Página central Main -->
-            <h2>Promoções do Dia</h2>
-            <div class="card-group">
-                <div class="card">
-                  <img class="card-img-top" src="img/roupa1.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Camisa Feminina Morcego</h5>
-                    <p class="card-text">R$50,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="img/roupa3.webp" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Camisa Feminina Ursinho</h5>
-                    <p class="card-text">R$40,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="IMG/roupa4.jfif" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Camisa Feminina BabyMetal</h5>
-                    <p class="card-text">R$45,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-              </div>
+            <h1>Editar Usuário</h1>
+<?php
 
-              <div class="card-group">
-                <div class="card">
-                  <img class="card-img-top" src="img/sobretudo.jpg" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Sobretudo Masculino</h5>
-                    <p class="card-text">R$120,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="img/terno2.jfif" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Terno Formal Masculino</h5>
-                    <p class="card-text">R$500,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="img/jaqueta1.webp" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Jaqueta de Couro Masculina</h5>
-                    <p class="card-text">R$250,00</p>
-                    <p class="card-text"><small class="text-muted">Promoção válida até 00h</small></p>
-                  </div>
-                </div>
-              </div>
+include_once('config.php');
+
+
+
+$sql = "SELECT * FROM user WHERE id=" . $_REQUEST["id"];
+
+$res = $conexao->query($sql);
+$row = $res->fetch_object();
+
+?>
+<form action="?page=salvar" method="POST">
+    <input type="hidden" name="acao" value="editar">
+    <input type="hidden" name="id" value="<?php print $row->id; ?>">
+    <div class="mb-3">
+        <label>Nome</label>
+        <input type="text" name="username" value="<?php print $row->username; ?>" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>E-Mail</label>
+        <input type="email" name="email" value="<?php print $row->email; ?>" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Senha</label>
+        <input type="password" name="password" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Data de Nascimento</label>
+        <input type="date" name="birthday" value="<?php print $row->birthday; ?>"class="form-control">
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" type="submit" >Enviar</button>
+    </div>
+</form>
+
+
+
+
+        
             
         </div>
 
@@ -178,6 +170,12 @@
             <img src="img/bannerlat1.png" class="bannerlat">
         </div>
     </div>
+
+
+
+
+
+    
 
     <footer>
         <!-- Rodapé-->

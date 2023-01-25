@@ -66,7 +66,7 @@ $result = mysqli_query($conexao, "INSERT INTO user( CPF,username,nickname,tel1,t
         <div style="background-color:#000000;padding:15px;">
             <div class="row">
                 <div class="col-md-2">
-                    <h2 class="menutext">Outlet</h2>
+                    <h2 class="menutext"><a href="Outlet.html">Outlet</a></h2>
                 </div>
 
                 <div class="col-md-2">
@@ -78,11 +78,11 @@ $result = mysqli_query($conexao, "INSERT INTO user( CPF,username,nickname,tel1,t
                 </div>
 
                 <div class="col-md-2">
-                    <h2 class="menutext"><a href="Cadastro.html">Cadastro</a></h2>
+                    <h2 class="menutext"><a href="Cadastro.php">Cadastro</a></h2>
                 </div>
 
                 <div class="col-md-2"> 
-                    <h2 class="menutext"> <a href="Sobre.html">Sobre Nós</a></h2>
+                    <h2 class="menutext"> <a href="UserEdit.php">Edição de Usuário</a></h2>
                 </div>
 
                 <div class="col-md-2">
@@ -109,8 +109,8 @@ $result = mysqli_query($conexao, "INSERT INTO user( CPF,username,nickname,tel1,t
 
     <!-- Página central Main -->
 <Div class="main">
-<h1>Central de Cadastro</h1>
-<h3>Envie sua solicitação para nossa equipe!</h2>
+<h1>Criação de conta</h1>
+<h3>Junte-se à nossa comunidade!</h2>
     <form action="Cadastro.php" method="POST">
 
  <!-- Input de Emails-->
