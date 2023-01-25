@@ -72,76 +72,43 @@
 
     <!-- Página central Main -->
 <Div class="main">
-<h1> Menu de Cadastro <h1>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
-<nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-       
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="novo-usuario.php" >Novo Usuário</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="listar-usuarios.php">Listar Usuários</a>
-                
-                
-                
-                
-                
-                
-        
-                    </li>
-
-
-</ul>
-<form class="d-flex" role="search">
-<input class="form-control me-2" type="search" placeholder="Do que você precisa?" aria-label="Search">
-<button class="btn btn-outline-success" type="submit">Procurar</button>
-</form>
-</div>
-</div>
-</nav>
-
-
-<div class="container">
-<div class="row">
-<div class="col mt-5">
+<h1>Editar Usuário</h1>
 <?php
-/*
-    include("config.php");
-    switch(@$_REQUEST["page"]){
-        case "novo":
-            include("novo-usuario.php");
-    break;
-        case "listar":
-            include("listar-usuarios.php");
-    break;
-        case "salvar":
-            include("salvar-usuario.php");
-    break;
-        case "editar":
-            include("editar-usuario.php");
-    break;
-        default:
-            print "<h1>Bem Vindos</h1>";
 
-}
-*/
+include("config.php");
+
+$sql = "SELECT * FROM user WHERE id=" . $_REQUEST["id"];
+
+$res = $conexao->query($sql);
+$row = $res->fetch_object();
 
 ?>
-</div>
-</div>
-</div>
+
+<form action="?page=salvar" method="POST">
+    <input type="hidden" name="acao" value="editar">
+    
+    <input type="hidden" name="id" value="<?php print $row->id; ?>">
+    <div class="mb-3">
+        <label>Nome</label>
+        <input type="text" name="username" value="<?php print $row->username; ?>" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>E-Mail</label>
+        <input type="email" name="email" value="<?php print $row->email; ?>" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Senha</label>
+        <input type="password" name="password" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Data de Nascimento</label>
+        <input type="date" name="birthday" value="<?php print $row->birthday; ?>"class="form-control">
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" type="submit" >Enviar</button>
+    </div>
+</form>
+
 
 
 

@@ -72,77 +72,49 @@
 
     <!-- Página central Main -->
 <Div class="main">
-<h1> Menu de Cadastro <h1>
+<h3> Listar Usuários <h3>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
-<nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-       
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="novo-usuario.php" >Novo Usuário</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="listar-usuarios.php">Listar Usuários</a>
-                
-                
-                
-                
-                
-                
-        
-                    </li>
-
-
-</ul>
-<form class="d-flex" role="search">
-<input class="form-control me-2" type="search" placeholder="Do que você precisa?" aria-label="Search">
-<button class="btn btn-outline-success" type="submit">Procurar</button>
-</form>
-</div>
-</div>
-</nav>
-
-
-<div class="container">
-<div class="row">
-<div class="col mt-5">
 <?php
-/*
-    include("config.php");
-    switch(@$_REQUEST["page"]){
-        case "novo":
-            include("novo-usuario.php");
-    break;
-        case "listar":
-            include("listar-usuarios.php");
-    break;
-        case "salvar":
-            include("salvar-usuario.php");
-    break;
-        case "editar":
-            include("editar-usuario.php");
-    break;
-        default:
-            print "<h1>Bem Vindos</h1>";
 
+include_once('config.php');
+
+$sql = "SELECT * FROM user";
+
+$res = $conexao->query($sql);
+
+$qtd = $res->num_rows;
+
+if($qtd > 0){
+    print "<table class='table table-hover table-strupped table-bordered'>";
+    print "<tr>";
+    print "<th>#</th>";
+    print "<th>Nome</th>";
+    print "<th>E-Mail</th>";
+    print "<th>Data de nascimento</th>";
+    print "<th>Acões</th>";
+    print "</tr>";
+    while($row = $res->fetch_object()){
+        print "<tr>";
+        print "<td>" . $row->id . "</td>";
+        print "<td>" . $row->username . "</td>";
+        print "<td>" . $row->email . "</td>";
+        print "<td>" . $row->birthday . "</td>";
+        print "<td>
+                    <button onclick=\"location.href='?page=editar&id=".$row->id."';\" class='btn btn-success'>Editar</button>
+
+
+                    <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id=".$row->id."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
+                </td>";
+        print "</tr>";
+    }
+    print "</table>";
+}else{
+    print "<p class='alert alert-danger'>Não encontrou resultados!</p>";
 }
-*/
+
+
 
 ?>
-</div>
-</div>
-</div>
-
 
 
 
