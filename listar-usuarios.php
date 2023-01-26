@@ -72,11 +72,26 @@
 
     <!-- Página central Main -->
 <Div class="main">
-<h3> Listar Usuários <h3>
+<h1> Listar Usuários <h1>
 
 <?php
 
-include_once('config.php');
+include("config.php");
+
+
+switch(@$_REQUEST["page"]){
+    case "salvar":
+        include("salvar-usuario.php");
+break;
+   // case "editar":
+    //    include("editar-usuario.php");
+break;
+    default:
+        print "<h2>Selecione o Usuário para Edição</h2>";
+
+}
+
+
 
 $sql = "SELECT * FROM user";
 
@@ -85,7 +100,7 @@ $res = $conexao->query($sql);
 $qtd = $res->num_rows;
 
 if($qtd > 0){
-    print "<table class='table table-hover table-strupped table-bordered'>";
+    print "<table class='table table-hover table-dark'>";
     print "<tr>";
     print "<th>#</th>";
     print "<th>Nome</th>";
@@ -99,11 +114,16 @@ if($qtd > 0){
         print "<td>" . $row->username . "</td>";
         print "<td>" . $row->email . "</td>";
         print "<td>" . $row->birthday . "</td>";
-        print "<td>
-                    <button onclick=\"location.href='?page=editar&id=".$row->id."';\" class='btn btn-success'>Editar</button>
+        print "<td>";
+        ?>
+                    <a href="editar-usuario.php?id=<?= $row->id ?>"class='btn btn-success'>Editar</a>
 
 
-                    <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id=".$row->id."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
+          <?php          
+          
+          /* Recebendo condição de excluir que vem de "salvar-usuario.php" */
+          print "<button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&id=".$row->id."';}else{false;}\"  class='btn btn-danger'>Excluir</button>
+
                 </td>";
         print "</tr>";
     }

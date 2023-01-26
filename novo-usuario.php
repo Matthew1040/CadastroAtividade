@@ -73,12 +73,13 @@
     <!-- Página central Main -->
 <Div class="main">
 <h1> Novo Usuário <h1>
+<h3> </h3>
 
-<form action="?page=salvar" method="POST">
+<form action="salvar-usuario.php" method="POST">
     <input type="hidden" name="acao" value="cadastrar">
     
     <div class="mb-3">
-        <label>username</label>
+        <label>Nome de Usuário</label>
         <input type="text" name="username" class="form-control">
     </div>
     <div class="mb-3">
@@ -86,7 +87,7 @@
         <input type="email" name="email" class="form-control">
     </div>
     <div class="mb-3">
-        <label>password</label>
+        <label>Senha</label>
         <input type="password" name="password" class="form-control">
     </div>
     <div class="mb-3">

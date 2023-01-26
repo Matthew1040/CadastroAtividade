@@ -9,11 +9,7 @@
 
     if($conexao->connect_errno)
     {
-        echo "Errou em alguma parada";
+        echo "Ocorreu um Erro! Tente novamente mais tarde.";
     }
-    else
-    {
-        echo "Conexão rodando redondinha";
-    }
-
+   
 ?>

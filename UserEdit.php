@@ -74,9 +74,9 @@
 <Div class="main">
 <h1> Menu de Cadastro <h1>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-<nav class="navbar navbar-expand-lg bg-light">
+
+<nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
        
 
@@ -85,7 +85,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-4">
 
                 <li class="nav-item">
                     <a class="nav-link" href="novo-usuario.php" >Novo Usuário</a>
@@ -104,10 +104,8 @@
 
 
 </ul>
-<form class="d-flex" role="search">
-<input class="form-control me-2" type="search" placeholder="Do que você precisa?" aria-label="Search">
-<button class="btn btn-outline-success" type="submit">Procurar</button>
-</form>
+
+
 </div>
 </div>
 </nav>

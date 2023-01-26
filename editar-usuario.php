@@ -75,19 +75,23 @@
 <h1>Editar Usuário</h1>
 <?php
 
+
+$id = $_GET['id'];
+
 include("config.php");
 
-$sql = "SELECT * FROM user WHERE id=" . $_REQUEST["id"];
+$sql = "SELECT * FROM user WHERE id=" .$id;
 
 $res = $conexao->query($sql);
 $row = $res->fetch_object();
 
 ?>
 
-<form action="?page=salvar" method="POST">
-    <input type="hidden" name="acao" value="editar">
+<form action="salvar-usuario.php" method="POST">
+    <input hidden name="acao" value="editar">
     
-    <input type="hidden" name="id" value="<?php print $row->id; ?>">
+    <input hidden name="id" value="<?php print $row->id; ?>">
+
     <div class="mb-3">
         <label>Nome</label>
         <input type="text" name="username" value="<?php print $row->username; ?>" class="form-control">

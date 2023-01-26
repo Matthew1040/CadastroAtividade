@@ -74,6 +74,8 @@
 <Div class="main">
 <?php
     include("config.php");
+
+    /* Switch estabelecendo condições */
     switch($_REQUEST["acao"]){
     case 'cadastrar':
         $username = $_POST["username"];
@@ -87,7 +89,7 @@
 
         if($res==true){
             print "<script>alert('Usuário cadastrado com sucesso');</script>";
-            print "<script>location.href='?page=listar';</script>";
+            print "<script>location.href='listar-usuarios.php';</script>";
         }else  {
             print "<script>alert('Não foi possível cadastrar');</script>";
             print "<script>location.href='?page=listar';</script>";
@@ -96,10 +98,12 @@
         break;
     case "editar":
 
+        $id = $_POST["id"];
         $username = $_POST["username"];
         $email = $_POST["email"];
         $password = $_POST["password"];
         $birthday = $_POST["birthday"];
+        
 
         $sql = "UPDATE user SET 
                 username='{$username}',
@@ -108,7 +112,7 @@
                 birthday='{$birthday}'
                 
                 WHERE
-                    id=".$_REQUEST["id"];
+                    id=".$id;
                 
                 
 
@@ -116,7 +120,7 @@
 
         if($res==true){
             print "<script>alert('Usuário editado com sucesso');</script>";
-            print "<script>location.href='?page=listar';</script>";
+            print "<script>location.href='UserEdit.php';</script>";
         }else  {
             print "<script>alert('Não foi possível editar');</script>";
             print "<script>location.href='?page=listar';</script>";
