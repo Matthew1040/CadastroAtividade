@@ -2,13 +2,12 @@
 <html lang="pt-br">
 <head>
     <link rel="stylesheet" href="Estilo.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Outlet</title>
     <style>
    * {
        box-sizing: border-box;
@@ -17,11 +16,7 @@
 </head>
 <body>
 
-<header> <img class="bannersup" src="img/banner7.webp">
-
-
-
-</header>
+<header> <img class="bannersup" src="img/banner7.webp"> </header>
 
 <body>
     <header>
@@ -72,74 +67,68 @@
 
     <!-- Página central Main -->
 <Div class="main">
-<h1> Menu de Cadastro <h1>
+<h2>Menu de Usuário</h2>
 
 
+<div class="d-grid gap-2">
+    <br>
+<a class="btn btn-success btn-lg" type="button" href="novo-usuario.php">Novo Usuário</a>
 
-<nav class="navbar navbar-expand-lg bg-dark">
-    <div class="container-fluid">
-       
+<a class="btn btn-warning btn-lg" type="button" href="listar-usuarios.php">Listar Usuários</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+</div>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-4">
+<br>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="novo-usuario.php" >Novo Usuário</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="listar-usuarios.php">Listar Usuários</a>
-                
-                
-                
-                
-                
-                
+<div id="carouselExampleAutoplaying" class="carousel slide w-auto" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/banner6.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/banner8.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/banner9.jpg" class="d-block w-100" alt="...">
+          </div>
         
-                    </li>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
 
-</ul>
 
 
-</div>
-</div>
-</nav>
 
 
-<div class="container">
-<div class="row">
-<div class="col mt-5">
-<?php
-/*
-    include("config.php");
-    switch(@$_REQUEST["page"]){
-        case "novo":
-            include("novo-usuario.php");
-    break;
-        case "listar":
-            include("listar-usuarios.php");
-    break;
-        case "salvar":
-            include("salvar-usuario.php");
-    break;
-        case "editar":
-            include("editar-usuario.php");
-    break;
-        default:
-            print "<h1>Bem Vindos</h1>";
-
-}
-*/
-
-?>
-</div>
-</div>
-</div>
+<!--<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/banner5.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/banner4.webp" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/banner6.webp" class="d-block w-50" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>-->
 
 
 
@@ -147,9 +136,6 @@
 
 
 
-
-    
-   
 
 </Div>
   <!-- Coluna da Direita-->
@@ -157,7 +143,9 @@
  <img class="bannerlat" src="img/bannerlat1.png">
    </div>
 
-   <footer>
+</div>
+
+<footer>
     <!-- Rodapé-->
     <div style="background-color:#ffffff;text-align:center;padding:10px;margin-top:7px;font-size:12px;"> <span
             id="data"></span>
@@ -182,9 +170,6 @@
  
 </footer>
 
-</div>
-
-
 
 
 
@@ -201,7 +186,8 @@
     
 
        
-                      
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>                    
 
           
 
