@@ -70,13 +70,8 @@
 <h2>Menu de Usuário</h2>
 
 
-<div class="d-grid gap-2">
-    <br>
-<a class="btn btn-success btn-lg" type="button" href="novo-usuario.php">Novo Usuário</a>
-
-<a class="btn btn-warning btn-lg" type="button" href="listar-usuarios.php">Listar Usuários</a>
-
-</div>
+ <a href="novo-usuario.php">       <img  src="img/newusersuit.png"> </a> 
+<a href="listar-usuarios.php">    <img src="img/editusersuit.png"> </a>
 
 <br>
 
@@ -91,8 +86,16 @@
           <div class="carousel-item">
             <img src="img/banner9.jpg" class="d-block w-100" alt="...">
           </div>
+<div>
+
+  <div> </div>
+
+</div>
+
+
+
         
-        </div>
+       </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -102,6 +105,7 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+     
 
 
 
