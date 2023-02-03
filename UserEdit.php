@@ -53,7 +53,7 @@
         </div>
 </header>
 <div class="caixa1">
-<h2 class="menutext1"><a href="index.html">Menu Principal</a></h2>
+<h2 class="menutext1"><a href="index.php">Menu Principal</a></h2>
 </div>
 
 

@@ -1,3 +1,11 @@
+
+<?php
+session_start();
+
+session_destroy();
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -62,6 +70,31 @@
         }
     </style>
 </head>
+
+<div style="background-color:#000000;padding:15px;">
+    <div class="row">
+        
+    <div class="col-md-6">
+    <?php
+                if(!empty($_SESSION['id'])){
+                    echo "Olá ".$_SESSION['nome'].", Bem vindo <br>";
+                    echo "<a href='index.php'></br></br>Sair</a>";
+                }else{
+                    $_SESSION['msg'] = "Área restrita";
+                   
+                }
+
+                ?>
+
+
+
+          
+        </div>
+
+
+    </div>  
+    
+</div>
 
 <header> <img class="bannersup" src="img/banner7.webp"> </header>
 
