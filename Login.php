@@ -19,63 +19,57 @@ session_start();
 </head>
 <body>
 
-<section class="h-100 gradient-form" style="background-color: black">
+<section class="vh-100" style="background-color: black;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-xl-10">
-        <div class="card rounded-3 text-black">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
-            <div class="col-lg-6">
-              <div class="card-body p-md-5 mx-md-4">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="img/login1.jpg"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
 
-                <div class="text-center">
-                  <img src="img/logo1.avif"
-                    style="width: 185px;" alt="logo">
-                  <h4 class="mt-1 mb-5 pb-1">Nós somos a Dark Sports</h4>
-                </div>
-
-                <form method="POST" action="valida.php">
-				<div class="alerta"><?php
+              <form method="POST" action="valida.php">
+                <div class="alerta"><?php
 			if(isset($_SESSION['msg'])){
 				echo $_SESSION['msg'];
 				unset($_SESSION['msg']);
 			}
 			?>
 
-                  <p>Por favor, faça login com a sua conta.</p>
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    
+                  <img src="img/logo50.jpg">
+                    <span class="h1 fw-bold mb-0">Dark Sports</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Seja parte da nossa comunidade!</h5>
 
                   <div class="form-outline mb-4">
-                    <input type="text" name="usuario" id="form2Example11" class="form-control" />
-                    <label class="form-label" for="form2Example11">Nome de Usuário</label>
+                    <input type="text" name="usuario" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Nome de Usuário</label>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="password" name="senha" id="form2Example22" class="form-control" />
-                    <label class="form-label" for="form2Example22">Senha</label>
+                    <input type="password" name="senha" id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Senha</label>
                   </div>
 
-                  <div class="text-center pt-1 mb-5 pb-1">
-
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" name="btnLogin" value="Acessar">Entrar</button>
-
-                    <a class="text-muted" href="#!">Esqueceu a senha?</a>
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-dark btn-lg btn-block" type="submit" name="btnLogin" value="Acessar">Entrar</button>
+               
                   </div>
 
-                  <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">Não possui uma conta?</p>
-                   <a href="novo-usuario.php"> <button type="button" class="btn btn-outline-danger">Cadastre-se</button></a>
-                  </div>
-
+                  <a class="small text-muted" href="#!">Esqueceu sua senha?</a>
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Não tem uma conta? <a href="novo-usuario.php"
+                      style="color: #393f81;">Cadastre-se aqui</a></p>
+                  <a href="#!" class="small text-muted">Termos de uso.</a>
+                  <a href="#!" class="small text-muted">Política de Privacidade</a>
                 </form>
 
-              </div>
-            </div>
-            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <h4 class="mb-4">We are more than just a company</h4>
-                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </div>
             </div>
           </div>

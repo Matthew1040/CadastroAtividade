@@ -1,7 +1,6 @@
 
 <?php
 session_start();
-session_destroy();
 
 ?>
 
@@ -72,13 +71,13 @@ session_destroy();
 </head>
 
 <div style="background-color:#000000;padding:15px;">
-    <div class="row">
+    <div class="row" style="justify-content:flex-end">
         
     <div class="col-md-6">
      <p class="menusuperior">Não possui uma conta? </p>
-    <a class="btn btn-outline-warning" type="button" href="novo-usuario.php">Cadastre-se </a>
-    <a class="btn btn-outline-success" type="button" href="Login.php">Login </a>
-
+    
+ 
+<p>
     <?php
                 if(!empty($_SESSION['id'])){
                     echo "Olá ".$_SESSION['nome'].", Bem vindo";
@@ -89,9 +88,9 @@ session_destroy();
                 }
 
                 ?>
-
-
-
+</p>
+<a class="btn btn-outline-warning" type="button" href="novo-usuario.php">Cadastre-se </a>
+    <a class="btn btn-outline-success" type="button" href="Login.php">Login </a>
           
         </div>
 

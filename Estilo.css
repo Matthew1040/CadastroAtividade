@@ -204,9 +204,20 @@ height: 350px;
 
   
     
+  .gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    }
+    
     @media (min-width: 768px) {
     .gradient-form {
-    height: 100vh;
+    height: 100vh !important;
     }
     }
     @media (min-width: 769px) {
@@ -216,21 +227,12 @@ height: 350px;
     }
     }
 
-    .gradient-custom {
-        /* fallback for old browsers */
-        background: #f093fb;
-      
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: -webkit-linear-gradient(to right, rgba(240,147,251,0.5), rgba(245,87,108,0.5));
-      
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        background: linear-gradient(to right, rgba(240,147,251,0.5), rgba(245,87,108,0.5))}
 
+    .col-md-6 > p{
+        color: white;
+    }
 
-        .menusuperior{
-color:white;
-
-
-        }
-
-   
+    .col-md-6{
+        display: flex;
+        gap: 30px;
+    }

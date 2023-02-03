@@ -119,10 +119,10 @@ echo "<script>alert ('".$msg."'); location.href='login.php';</script>";
         
 
         $sql = "UPDATE tb_usuario SET 
-                nome='{$nome}',
-                usuario='{$usuario}',
-                email='{$email}',
-                senha='{$senha},
+                nome={$nome},
+                email={$email},
+                usuario={$usuario},
+                senha={$senha}
             
                 
                 WHERE
