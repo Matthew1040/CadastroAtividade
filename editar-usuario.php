@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="col-md-2">
-                    <h2 class="menutext"><a href="Cadastro.php">Cadastro</a></h2>
+                    <h2 class="menutext"><a href="Login.php">Cadastro</a></h2>
                 </div>
 
                 <div class="col-md-2"> 
@@ -80,7 +80,7 @@ $id = $_GET['id'];
 
 include("config.php");
 
-$sql = "SELECT * FROM user WHERE id=" .$id;
+$sql = "SELECT * FROM tb_usuario WHERE id=" .$id;
 
 $res = $conexao->query($sql);
 $row = $res->fetch_object();
@@ -93,8 +93,12 @@ $row = $res->fetch_object();
     <input hidden name="id" value="<?php print $row->id; ?>">
 
     <div class="mb-3">
-        <label>Nome</label>
-        <input type="text" name="username" value="<?php print $row->username; ?>" class="form-control">
+        <label>Nome Pessoal</label>
+        <input type="text" name="nome" value="<?php print $row->nome; ?>" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Nome de Usuário</label>
+        <input type="text" name="usuario" value="<?php print $row->usuario; ?>" class="form-control">
     </div>
     <div class="mb-3">
         <label>E-Mail</label>
@@ -102,11 +106,7 @@ $row = $res->fetch_object();
     </div>
     <div class="mb-3">
         <label>Senha</label>
-        <input type="password" name="password" class="form-control" required>
-    </div>
-    <div class="mb-3">
-        <label>Data de Nascimento</label>
-        <input type="date" name="birthday" value="<?php print $row->birthday; ?>"class="form-control">
+        <input type="password" name="senha" class="form-control" required>
     </div>
     <div class="mb-3">
         <button class="btn btn-primary" type="submit" >Enviar</button>

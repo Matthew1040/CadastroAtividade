@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="col-md-2">
-                    <h2 class="menutext"><a href="Cadastro.php">Cadastro</a></h2>
+                    <h2 class="menutext"><a href="Login.php">Login</a></h2>
                 </div>
 
                 <div class="col-md-2"> 
@@ -79,8 +79,12 @@
     <input type="hidden" name="acao" value="cadastrar">
     
     <div class="mb-3">
+        <label>Nome Pessoal</label>
+        <input type="text" name="nome" class="form-control">
+    </div>
+    <div class="mb-3">
         <label>Nome de Usuário</label>
-        <input type="text" name="username" class="form-control">
+        <input type="text" name="usuario" class="form-control">
     </div>
     <div class="mb-3">
         <label>E-Mail</label>
@@ -88,11 +92,7 @@
     </div>
     <div class="mb-3">
         <label>Senha</label>
-        <input type="password" name="password" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label>Data de Nascimento</label>
-        <input type="date" name="birthday" class="form-control">
+        <input type="password" name="senha" class="form-control">
     </div>
     <div class="mb-3">
         <button class="btn btn-primary" type="submit" >Enviar</button>

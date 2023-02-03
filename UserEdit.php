@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="col-md-2">
-                    <h2 class="menutext"><a href="Cadastro.php">Cadastro</a></h2>
+                    <h2 class="menutext"><a href="Login.php">Login</a></h2>
                 </div>
 
                 <div class="col-md-2"> 

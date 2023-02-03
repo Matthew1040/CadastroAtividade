@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="col-md-2">
-                    <h2 class="menutext"><a href="Cadastro.php">Cadastro</a></h2>
+                    <h2 class="menutext"><a href="login.php">Cadastro</a></h2>
                 </div>
 
                 <div class="col-md-2"> 
@@ -78,38 +78,52 @@
     /* Switch estabelecendo condições */
     switch($_REQUEST["acao"]){
     case 'cadastrar':
-        $username = $_POST["username"];
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        $birthday = $_POST["birthday"];
+        $nome = $_POST["nome"];
+// recebe o Email
+$email = $_POST["email"];
+// recebe a senha Digitada
+$usuario = $_POST["usuario"];
+// recebe o perfil do usuario
+$senha = PASSWORD_HASH($_POST["senha"], PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO user (username, email, password, birthday) VALUES ('{$username}', '{$email}', '{$password}', '{$birthday}' )";
 
-        $res = $conexao->query($sql);
 
-        if($res==true){
-            print "<script>alert('Usuário cadastrado com sucesso');</script>";
-            print "<script>location.href='listar-usuarios.php';</script>";
-        }else  {
-            print "<script>alert('Não foi possível cadastrar');</script>";
-            print "<script>location.href='?page=listar';</script>";
-        }
+//montar a query sql de gravação recebendo as variaveis via post
+
+$sql = "INSERT INTO tb_usuario values (null,'$nome', '$email', '$usuario', '$senha')";
+
+
+//Faz a conexao e executa a instrucao carregada na varivael $sql e os envia para o banco mysql.
+if (mysqli_query($conexao, $sql)){
+    // Caso a conexao esteja correta cria o retorno do cadastro
+    $msg = "Cadastrado com sucesso!";
+}else{
+    // Caso a conexao nao seja realizada cria o retorno do cadastro com erro
+    $msg = "Erro ao Cadastrar";
+}
+// Encerra a conexão com o banco
+mysqli_close($conexao);
+// Cria um alert javascript carrega o conteúdo da variável $msg e redireciona para o index
+echo "<script>alert ('".$msg."'); location.href='login.php';</script>";
+    
         
         break;
     case "editar":
 
         $id = $_POST["id"];
-        $username = $_POST["username"];
+        $nome = $_POST["nome"];
+        $usuario = $_POST["usuario"];
         $email = $_POST["email"];
-        $password = $_POST["password"];
-        $birthday = $_POST["birthday"];
+        $senha = $_POST["senha"];
+       
         
 
-        $sql = "UPDATE user SET 
-                username='{$username}',
+        $sql = "UPDATE tb_usuario SET 
+                nome='{$nome}',
+                usuario='{$usuario}',
                 email='{$email}',
-                password='{$password}',
-                birthday='{$birthday}'
+                senha='{$senha},
+            
                 
                 WHERE
                     id=".$id;
@@ -129,7 +143,7 @@
         break;
     case "excluir":
 
-        $sql = "DELETE FROM user WHERE id=".$_REQUEST["id"];
+        $sql = "DELETE FROM tb_usuario WHERE id=".$_REQUEST["id"];
 
         $res = $conexao->query($sql);
 

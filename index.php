@@ -1,8 +1,8 @@
 
 <?php
 session_start();
-
 session_destroy();
+
 ?>
 
 
@@ -75,10 +75,14 @@ session_destroy();
     <div class="row">
         
     <div class="col-md-6">
+     <p class="menusuperior">Não possui uma conta? </p>
+    <a class="btn btn-outline-warning" type="button" href="novo-usuario.php">Cadastre-se </a>
+    <a class="btn btn-outline-success" type="button" href="Login.php">Login </a>
+
     <?php
                 if(!empty($_SESSION['id'])){
-                    echo "Olá ".$_SESSION['nome'].", Bem vindo <br>";
-                    echo "<a href='index.php'></br></br>Sair</a>";
+                    echo "Olá ".$_SESSION['nome'].", Bem vindo";
+                    echo "<a href='index.php'>Sair</a>";
                 }else{
                     $_SESSION['msg'] = "Área restrita";
                    
@@ -117,7 +121,7 @@ session_destroy();
                 </div>
 
                 <div class="col-md-2">
-                    <h2 class="menutext"><a href="Cadastro.php">Cadastro</a></h2>
+                    <h2 class="menutext"><a href="Login.php">Login</a></h2>
                 </div>
 
                 <div class="col-md-2"> 

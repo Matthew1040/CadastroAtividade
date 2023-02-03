@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="col-md-2">
-                    <h2 class="menutext"><a href="Cadastro.php">Cadastro</a></h2>
+                    <h2 class="menutext"><a href="Login.php">Login</a></h2>
                 </div>
 
                 <div class="col-md-2"> 
@@ -93,7 +93,7 @@ break;
 
 
 
-$sql = "SELECT * FROM user";
+$sql = "SELECT * FROM tb_usuario";
 
 $res = $conexao->query($sql);
 
@@ -104,16 +104,17 @@ if($qtd > 0){
     print "<tr>";
     print "<th>#</th>";
     print "<th>Nome</th>";
+    print "<th>Usuario</th>";
     print "<th>E-Mail</th>";
-    print "<th>Data de nascimento</th>";
     print "<th>Acões</th>";
     print "</tr>";
     while($row = $res->fetch_object()){
         print "<tr>";
         print "<td>" . $row->id . "</td>";
-        print "<td>" . $row->username . "</td>";
+        print "<td>" . $row->nome . "</td>";
+        print "<td>" . $row->usuario . "</td>";
         print "<td>" . $row->email . "</td>";
-        print "<td>" . $row->birthday . "</td>";
+    
         print "<td>";
         ?>
                     <a href="editar-usuario.php?id=<?= $row->id ?>"class='btn btn-success'>Editar</a>
