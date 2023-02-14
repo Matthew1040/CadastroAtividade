@@ -66,7 +66,7 @@ $result = mysqli_query($conexao, "INSERT INTO user( CPF,username,nickname,tel1,t
         <div style="background-color:#000000;padding:15px;">
             <div class="row">
                 <div class="col-md-2">
-                    <h2 class="menutext"><a href="Outlet.html">Outlet</a></h2>
+                    <h2 class="menutext"><a href="Outlet.php">Outlet</a></h2>
                 </div>
 
                 <div class="col-md-2">

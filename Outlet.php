@@ -13,6 +13,35 @@
     }
     </style>
 </head>
+<div style="background-color:#000000;padding:15px;">
+    <div class="row" style="justify-content:flex-end">
+        
+    <div class="col-md-6">
+     <p class="menusuperior">Não possui uma conta? </p>
+    
+ 
+<p>
+    <?php
+                if(!empty($_SESSION['id'])){
+                    echo "Olá ".$_SESSION['nome'].", Bem vindo";
+                   
+                }else{
+                    $_SESSION['msg'] = "Área restrita";
+                   
+                }
+
+                ?>
+</p>
+<a class="btn btn-outline-warning" type="button" href="novo-usuario.php">Cadastre-se </a>
+    <a class="btn btn-outline-success" type="button" href="Login.php">Login </a>
+          
+        </div>
+
+
+    </div>  
+    
+</div>
+
 <body>
 
 <header> <img class="bannersup" src="img/banner7.webp"> </header>
